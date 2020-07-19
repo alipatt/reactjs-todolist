@@ -4,6 +4,7 @@ import { FormGroup, Label, Input, Button, Form } from "reactstrap";
 export default class AddTodo extends Component {
   state = {
     todo: "",
+    date: undefined
   };
 
   handleChange = (event) => {
@@ -41,6 +42,9 @@ export default class AddTodo extends Component {
               onChange={this.handleChange}
               required
             ></Input>
+          </FormGroup>
+          <FormGroup>
+            <Input type="date" id="date" name="date" onChange={this.handleChange} required></Input>
           </FormGroup>
 
           <Button type="submit" color="info" onClick={this.handleSumbit}>

@@ -16,7 +16,7 @@ export default class TodoMenu extends Component {
             }}
           >
             <Link to="/todolist" style={divStyle}>
-              to do
+              To Do
             </Link>
           </li>
           <li
@@ -26,12 +26,12 @@ export default class TodoMenu extends Component {
             }}
           >
             <Link to="/todolist" style={divStyle}>
-              did it
+              Done
             </Link>
           </li>
           <li className="list-group-item">
             <Link to="/addtodo" style={divStyle}>
-              add to todolist
+              Add To Todolist
             </Link>
           </li>
         </ul>

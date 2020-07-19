@@ -14,6 +14,9 @@ module.exports = db.sequelize.define(
     },
     status: {
       type: Sequelize.INTEGER
+    },
+    date:{
+      type: Sequelize.DATE
     }
   },
   {

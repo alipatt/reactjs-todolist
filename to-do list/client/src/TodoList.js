@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+const tdStyle={
+  textDecoration : "line-through"
+}
+
 export default class TodoList extends Component {
   delete(el) {
     axios
@@ -20,6 +24,14 @@ export default class TodoList extends Component {
       });
     window.location.reload();
   }
+  todo(el){
+    if(el.status===1){
+      return<td style={tdStyle}>{el.todo}</td>
+    }
+    else{
+      return<td >{el.todo}</td>
+    }
+  }
   render() {
     return (
       <div>
@@ -29,6 +41,7 @@ export default class TodoList extends Component {
               <th scope="col">#</th>
               <th scope="col">Todo</th>
               <th scope="col">Status</th>
+              <th scope="col">End Date</th>
               <th scope="col">Buttons</th>
             </tr>
           </thead>
@@ -37,9 +50,9 @@ export default class TodoList extends Component {
             {this.props.currentlist.map((el) => (
               <tr key={el.id}>
                 <th scope="row">{el.id}</th>
-                <td>{el.todo}</td>
-                <td>{el.status === 1 ? "did it" : "todo"}</td>
-
+                {this.todo(el)}
+                <td>{el.status === 1 ? "DONE" : "todo"}</td>
+                <td>{el.date}</td>
                 <td>
                   <button
                     className="btn btn-danger"

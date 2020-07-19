@@ -25,7 +25,8 @@ app.post('/didit', (req, res) => {
   const todo = {
     id:req.body.id,
   todo: req.body.todo,
-  status: 1
+  status: 1 ,
+  date:req.body.date
     }
 
 // Update into table
@@ -56,7 +57,8 @@ app.post('/addtodo', (req, res) => {
   const todo = {
     id:req.body.id,
     todo: req.body.todo,
-    status: 0
+    status: 0,
+    date:req.body.date
     }
 console.log(todo)
 // Insert into table

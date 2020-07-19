@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./Navbar"
 import TodoMenu from "./TodoMenu";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
@@ -25,6 +26,7 @@ export default class App extends Component {
           id: el.id,
           todo: el.todo,
           status: el.status,
+          date:el.date
         });
       });
       this.setState({ todolist: list, currentlist: list });
@@ -51,6 +53,7 @@ export default class App extends Component {
     return (
       <Router>
         <Container className="py-4">
+          <Route component={Navbar} />
           <Row>
             <Col xs="12" sm="3" md="3" lg="3">
               <Route
