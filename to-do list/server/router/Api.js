@@ -39,12 +39,12 @@ Todo.update(todo,{ where: { id: todo.id } }).then((response) => {
 })
 
 app.post('/delete', (req, res) => {
-  const product = {
+  const todo = {
     id:req.body.id
     }
 
 // Delete into table
-Todo.destroy({ where: { id: product.id } }
+Todo.destroy({ where: { id: todo.id } }
   ).then(() => {
     res.status(200).json()
   }).catch(function (err) {
